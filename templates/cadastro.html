@@ -10,7 +10,7 @@
 <body>
 
 <div class="container mt-3">
-  <h1>Lobo PetShop</h1>
+  <h1>Megan PetShop</h1>
 
   <a href="/animais">Ver animais cadastrados</a>
 
@@ -25,9 +25,20 @@
       <label for="tutor">Tutor:</label>
       <input type="text" class="form-control" id="tutor" placeholder="Informe o nome do tutor do animal" name="tutor" required>
     </div>
-    <div class="mb-3 mt-3">
+     <div class="mb-3 mt-3">
       <label for="especie">Espécie:</label>
-      <input type="text" class="form-control" id="especie" placeholder="Informe a espécie do animal" name="especie" required>
+      <select class="form-select" id="especie" name="especie">
+        <option selected>Escolha uma espécie</option>
+        <option value="Cachorro">Cachorro</option>
+        <option value="Gato">Gato</option>
+        <option value="Cavalo">Cavalo</option>
+        <option value="Ave">Ave</option>
+
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="raca"> Raça:</label>
+      <input type="text" class="form-control" id="raca" name="raca" required>
     </div>
     <div class="mb-3">
       <label for="peso">Peso (Kg):</label>
@@ -39,7 +50,7 @@
     </div>
     <div class="mb-3">
       <label for="contato">Telefone de contato:</label>
-      <input type="tel" id="contato" name="contato" placeholder="XX XXXXX-XXXX" required>
+      <input type="tel" class="form-control" id="contato" name="contato" placeholder="XX XXXXX-XXXX" required>
     </div>
     <div class="mb-3 mt-3">
       <label for="endereco">Endereço:</label>
@@ -87,7 +98,7 @@
       <input type="file" id="foto" name="foto" required>
     </div>
     <button type="submit" class="btn btn-primary">Cadastrar</button>
-    <button type="reset" class="btn btn-warning">Limpar</button>
+    <button type="reset" class="btn btn-danger">Limpar</button>
   </form>
 </div>
 

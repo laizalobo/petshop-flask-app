@@ -19,7 +19,7 @@ def animais():
     with open('animais.csv', newline='') as ficheiro:
         for row in csv.reader(ficheiro):
             if(len(row) > 0):
-                data = row[4].replace('-', '')
+                data = row[5].replace('-', '')
                 ano = int(data[:4])
                 dia = int(data[6:8])
                 mes = int(data[4:6])
@@ -33,13 +33,14 @@ def animais():
                 animais.append({"nome": row[0],
                                 "tutor": row[1],
                                 "especie": row[2],
-                                "peso": row[3],
+                                "raca": row[3],
+                                "peso": row[4],
                                 "data_nascimento": str(dia)+'/'+str(mes)+'/'+str(ano),
-                                "contato": row[5],
-                                "endereco": row[6],
-                                "cidade": row[7],
-                                "uf": row[8],
-                                "foto": row[9],
+                                "contato": row[6],
+                                "endereco": row[7],
+                                "cidade": row[8],
+                                "uf": row[9],
+                                "foto": row[10],
                                 })
     return render_template('animais.html', animais=animais)
 
@@ -59,6 +60,7 @@ def cadastro():
                 writer.writerow([request.form.get('nome'),
                                  request.form.get('tutor'),
                                  request.form.get('especie'),
+                                 request.form.get('raca'),
                                  request.form.get('peso'),
                                  request.form.get('data_nascimento'),
                                  request.form.get('contato'),
